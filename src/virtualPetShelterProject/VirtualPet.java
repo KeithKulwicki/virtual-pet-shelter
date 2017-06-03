@@ -6,18 +6,19 @@ public class VirtualPet {
 
 	private Random generator = new Random();
 
-	  //include appropriate instance variable(s) to store the pets who reside at the shelter
-	  String name;
-	  String description;  
-	  int hungerLevel;
-	  int thirstLevel;
-	  int boredomLevel;
+	// include appropriate instance variable(s) to store the pets who reside at
+	// the shelter
+	String name;
+	String description;
+	int hungerLevel;
+	int thirstLevel;
+	int boredomLevel;
 
-	
 	public VirtualPet(String nameParam, String descriptionParam) {
 		name = nameParam;
 		description = descriptionParam;
 	}
+
 	public VirtualPet(String nameParam, String descriptionParam, int hungerParam, int thirstParam, int boredomParam) {
 		name = nameParam;
 		description = descriptionParam;
@@ -25,8 +26,7 @@ public class VirtualPet {
 		thirstLevel = thirstParam;
 		boredomLevel = boredomParam;
 	}
-	
-	
+
 	public void tick() {
 		hungerLevel += 5 + generateRandom();
 		thirstLevel += 5 + generateRandom();
@@ -36,12 +36,12 @@ public class VirtualPet {
 	public int generateRandom() {
 		return generator.nextInt(6); // random number between 0-5
 	}
-	
-	//name
+
+	// name
 	public String getName() {
 		return name;
 	}
-	
+
 	public void rename(String newName) {
 		name = newName;
 	}
@@ -50,6 +50,7 @@ public class VirtualPet {
 	int getHunger() {
 		return hungerLevel;
 	}
+
 	int feed() {
 		return hungerLevel = 0; // if fed, hunger = 0
 	}
@@ -60,38 +61,42 @@ public class VirtualPet {
 	}
 
 	int water() {
-		return thirstLevel = 0;	// if drink, thirst =0 
+		return thirstLevel = 0; // if drink, thirst =0
 	}
-
 
 	// boredom
 	int getBoredom() {
 		return boredomLevel;
 	}
+
 	int play() {
 		hungerLevel += 5; // play = more hungry &
 		thirstLevel += 5; // play = more thirsty
 		return boredomLevel = 0; // play = boredom = 0
 	}
+
 	// Tick/make time pass
-	int getHungerTick(){
+	int getHungerTick() {
 		int tick = generator.nextInt(10);
-		hungerLevel +=tick;
+		hungerLevel += tick;
 		return hungerLevel;
 	}
-	int getThirstTick(){
+
+	int getThirstTick() {
 		int tick = generator.nextInt(10);
-		thirstLevel +=tick;
+		thirstLevel += tick;
 		return thirstLevel;
 	}
-	int getBoredomTick(){
+
+	int getBoredomTick() {
 		int tick = generator.nextInt(10);
-		boredomLevel +=tick;
+		boredomLevel += tick;
 		return boredomLevel;
 	}
+
 	@Override
 	public String toString() {
-		return ("[" + name + "] " + description); 
+		return ("[" + name + "] " + description);
 	}
 
 }

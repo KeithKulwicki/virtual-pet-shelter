@@ -18,10 +18,10 @@ public class VirtualPetShelterApp {
 			System.out.println("Name\t|\tHunger\t|\tThirst\t|\tBoredom\t|");
 
 			for (VirtualPet currentPet : shelter.pets()) {
-				System.out.println(currentPet.name + "\t|\t" + currentPet.hungerLevel + "\t|\t" + currentPet.thirstLevel + "\t|\t"
-						+ currentPet.boredomLevel + "\t|");
+				System.out.println(currentPet.name + "\t|\t" + currentPet.hungerLevel + "\t|\t" + currentPet.thirstLevel
+						+ "\t|\t" + currentPet.boredomLevel + "\t|");
 			}
-// Asks for user input
+			// Asks for user input
 			System.out.println("What would you like to do next?");
 			System.out.println("1. Feed the pets ");
 			System.out.println("2. Water the pets ");
@@ -29,10 +29,10 @@ public class VirtualPetShelterApp {
 			System.out.println("4. Adopt a pet ");
 			System.out.println("5. Admit a homeless pet ");
 			System.out.println("6. Ignore pets ");
-			System.out.println( "7. Leave SebMax Virtual Pet Shelter");
+			System.out.println("7. Leave SebMax Virtual Pet Shelter");
 			String response = input.next();
 			input.nextLine();
-// Writes output to the console
+			// Writes output to the console
 			switch (response) {
 			case "1": // Feed all of the pets in the shelter
 				shelter.feedPets();
@@ -42,13 +42,14 @@ public class VirtualPetShelterApp {
 				shelter.waterPets();
 				System.out.println("Thank you for watering the pets.");
 				break;
-			case "3": // plays (or performs some other interaction(s)) with an individual pet in the shelter
+			case "3": // plays (or performs some other interaction(s)) with an
+						// individual pet in the shelter
 				System.out.println("Play with a pet. Please choose one:");
 				displayPets(shelter);
 				System.out.println("Enter with which pet would you like to play?");
 				String petName = input.next();
 				shelter.playWithPets(shelter.getPet(petName));
-				System.out.println("Enjoy playing with " + petName  + ". ");
+				System.out.println("Enjoy playing with " + petName + ". ");
 				break;
 			case "4": // Allow adoption of a homeless pet
 				System.out.println("Adopting a pet is AWESOME! Please choose one:");
@@ -77,16 +78,12 @@ public class VirtualPetShelterApp {
 				System.out.println("Please enter a valid selection");
 				break;
 			}
-			shelter.tick(); //calls VirtualPetShelter's tick method after each interaction
+			shelter.tick(); // calls VirtualPetShelter's tick method after each
+							// interaction
 		} while (!exit);
 		input.close();
 
 	}
-
-
-
-
-	
 
 	private static void displayPets(VirtualPetShelter y) {
 		Collection<VirtualPet> listOfPets = new ArrayList<>();
