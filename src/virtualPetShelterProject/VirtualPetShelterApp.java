@@ -15,11 +15,11 @@ public class VirtualPetShelterApp {
 		do {
 			System.out.println("");
 			System.out.println("Pet Status: ");
-			System.out.println("Name\t\t\t|\tHunger\t|\tThirst\t|\tBoredom\t|");
+			System.out.println("Name\t\t\tHunger\t\tThirst\t\tBoredom\t");
 
 			for (VirtualPet currentPet : shelter.pets()) {
-				System.out.println(currentPet.name + "\t\t|\t" + currentPet.hungerLevel + "\t|\t" + currentPet.thirstLevel
-						+ "\t|\t\t" + currentPet.boredomLevel + "\t|");
+				System.out.println(currentPet.name + "\t\t" + currentPet.hungerLevel + "\t\t" + currentPet.thirstLevel
+						+ "\t\t" + currentPet.boredomLevel);
 			}
 			// Asks for user input
 			System.out.println("");
@@ -52,7 +52,7 @@ public class VirtualPetShelterApp {
 				displayPets(shelter);
 				System.out.println("");
 				System.out.println("Enter pet name with which you would like to play?");
-				String petName = input.next();
+				String petName = input.nextLine();
 				shelter.playWithPets(shelter.getPet(petName));
 				System.out.println("");
 				System.out.println("Enjoy playing with " + petName + ". ");
@@ -63,7 +63,7 @@ public class VirtualPetShelterApp {
 				displayPets(shelter);
 				System.out.println("");
 				System.out.println("Enter pet name which you are giving a home?");
-				String nameToAdopt = input.next();
+				String nameToAdopt = input.nextLine();
 				shelter.adopt(nameToAdopt);
 				System.out.println("");
 				System.out.println("Adopting a pet is AWESOME! Thak you! Enjoy your Forever Home, " + nameToAdopt

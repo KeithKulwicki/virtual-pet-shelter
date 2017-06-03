@@ -14,12 +14,12 @@ public class VirtualPet {
 	int thirstLevel;
 	int boredomLevel;
 
-	public VirtualPet(String nameParam, String descriptionParam) {
+	VirtualPet(String nameParam, String descriptionParam) {
 		name = nameParam;
 		description = descriptionParam;
 	}
 
-	public VirtualPet(String nameParam, String descriptionParam, int hungerParam, int thirstParam, int boredomParam) {
+	VirtualPet(String nameParam, String descriptionParam, int hungerParam, int thirstParam, int boredomParam) {
 		name = nameParam;
 		description = descriptionParam;
 		hungerLevel = hungerParam;
@@ -27,22 +27,22 @@ public class VirtualPet {
 		boredomLevel = boredomParam;
 	}
 
-	public void tick() {
+	void tick() {
 		hungerLevel += 0 + generateRandom();
 		thirstLevel += 0 + generateRandom();
 		boredomLevel += 0 + generateRandom();
 	}
 
-	public int generateRandom() {
+	int generateRandom() {
 		return generator.nextInt(6); // random number between 0-5
 	}
 
 	// name
-	public String getName() {
+	String getName() {
 		return name;
 	}
 
-	public void rename(String newName) {
+	void rename(String newName) {
 		name = newName;
 	}
 

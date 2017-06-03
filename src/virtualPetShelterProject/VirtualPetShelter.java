@@ -8,39 +8,39 @@ public class VirtualPetShelter {
 
 	Map<String, VirtualPet> mapVirtualPets = new HashMap<String, VirtualPet>();
 
-	public Collection<VirtualPet> pets() {
+	Collection<VirtualPet> pets() {
 		return mapVirtualPets.values();
 	}
 
-	public VirtualPet getPet(String name) {
+	VirtualPet getPet(String name) {
 		return mapVirtualPets.get(name);
 	}
 
-	public void intake(VirtualPet pet) {
+	void intake(VirtualPet pet) {
 		mapVirtualPets.put(pet.name, pet);
 	}
 
-	public void adopt(String name) {
+	void adopt(String name) {
 		mapVirtualPets.remove(name);
 	}
 
-	public void feedPets() {
+	void feedPets() {
 		for (VirtualPet currentPet : mapVirtualPets.values()) {
 			currentPet.feed();
 		}
 	}
 
-	public void waterPets() {
+	void waterPets() {
 		for (VirtualPet currentPet : mapVirtualPets.values()) {
 			currentPet.water();
 		}
 	}
 
-	public void playWithPets(VirtualPet p) {
+	void playWithPets(VirtualPet p) {
 		p.play();
 	}
 
-	public void tick() {
+	void tick() {
 		for (VirtualPet currentPet : mapVirtualPets.values()) {
 			currentPet.tick();
 		}
