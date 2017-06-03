@@ -1,13 +1,9 @@
 Virtual Pet Shelter
 
-At the Virtual Pet Shelter, you care for many animals' needs
+User provides all animals with unique name and brief description
 
-All of the animals have unique name and brief description
+User cares for the animals by inputing commands for food, water, and play
 
-Each animal needs food, water, and play
-
-You care for the animals by inputing commands
-
-You also adopt and take in new pets
+User takes in a new pet and adopts out a current pet
 
 To exit the game (Leave store), input "7"

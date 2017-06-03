@@ -28,9 +28,9 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		hungerLevel += 5 + generateRandom();
-		thirstLevel += 5 + generateRandom();
-		boredomLevel += 5 + generateRandom();
+		hungerLevel += 0 + generateRandom();
+		thirstLevel += 0 + generateRandom();
+		boredomLevel += 0 + generateRandom();
 	}
 
 	public int generateRandom() {
@@ -77,19 +77,19 @@ public class VirtualPet {
 
 	// Tick/make time pass
 	int getHungerTick() {
-		int tick = generator.nextInt(10);
+		int tick = generator.nextInt(5);
 		hungerLevel += tick;
 		return hungerLevel;
 	}
 
 	int getThirstTick() {
-		int tick = generator.nextInt(10);
+		int tick = generator.nextInt(5);
 		thirstLevel += tick;
 		return thirstLevel;
 	}
 
 	int getBoredomTick() {
-		int tick = generator.nextInt(10);
+		int tick = generator.nextInt(5);
 		boredomLevel += tick;
 		return boredomLevel;
 	}
